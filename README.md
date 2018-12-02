@@ -7,7 +7,7 @@ The Makefile in folder *examples\examplesA* has a number of tasks, one specifica
 ```
 make first
 ```
-This makes the lock DB table, the state (S3) bucket, fills out and creates the remote_state.tf file and then copies the state from the local disk to the bucket.PHEW. The State of the bucket is now managed along with any future resources.
+This makes the lock DB table, the state (google_storage_bucket) bucket, fills out and creates the remote_state.tf file and then copies the state from the local disk to the bucket.PHEW. The State of the bucket is now managed along with any future resources.
 
 On the second and subsequent runs you use:
 ```
