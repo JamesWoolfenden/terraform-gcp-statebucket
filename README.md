@@ -14,6 +14,10 @@ On the second and subsequent runs you use:
 make build
 ``` 
 
+If this is your first time using some of the apis you might needs to enable them:
+https://console.developers.google.com/apis/api/cloudresourcemanager.googleapis.com/overview?
+
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
