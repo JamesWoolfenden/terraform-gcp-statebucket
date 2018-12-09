@@ -1,7 +1,7 @@
 provider "google" {
-  project = "terraform-state-224320"
-  region  = "us-central1"
-  version = "1.19.1"
+  project     = "focused-elysium-224508"
+  region      = "europe-west1"
+  version     = "~> 1.19"
 }
 
 provider "local" {
