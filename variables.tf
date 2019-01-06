@@ -3,6 +3,6 @@ variable "common_tags" {
   type        = "map"
 }
 
-locals{
-bucket_name="terraform-state-${data.google_project.project.number}"
+locals {
+  bucket_name = "terraform-state-${data.google_project.project.number}"
 }
