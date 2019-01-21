@@ -162,7 +162,7 @@ See [LICENSE](LICENSE) for full details.
 
 
 
-[logo]: https://github.com/JamesWoolfenden/build-harness/blob/master/docs/slalom-logo.png
+[logo]: /docs/slalom-logo.png
 [website]: https://slalom.com
 [github]: https://github.com/jameswoolfenden
 [slack]: https://cpco.io/slack
