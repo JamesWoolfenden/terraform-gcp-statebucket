@@ -7,7 +7,6 @@
 
 Terraform module to provision a secure terraform state bucket for team use of IAC.
 
-
 ---
 
 This project uses the "build-harness" a modified version of the project ["SweetOps"](https://cpco.io/sweetops) from Cloudposse. Sweet indeed.
@@ -45,21 +44,16 @@ common_tags = "${var.common_tags}"
 ```
 Available targets:
 
-  help/all:
-                          Display help for all targets
-  help/short:
-                        This help short screen
-  help:
-                              Help screen
-  lint:
-                              Lint terraform code
+  help:                              Help screen
+  help/all:                          Display help for all targets
+  help/short:                        This help short screen
+  lint:                              Lint terraform code
 
 ```
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| bucket_name | - | string | - | yes |
 | common_tags | This is a map type for applying tags on resources | map | - | yes |
 
 ## Outputs
@@ -75,23 +69,16 @@ But if we want to automate everything via Terraform? Traditionally we would have
 The module and example solves the issue of creating a state bucket in Terraform using Terrraform itself.
 
 ## But how?
-
 The Makefile in folder *examples\examplesA* has a number of tasks, one specifically to create the initial bucket:
-
-``` bash
+```
 make first
 ```
-
 This makes the lock DB table, the state (google_storage_bucket) bucket, fills out and creates the remote_state.tf file and then copies the state from the local disk to the bucket.PHEW. The State of the bucket is now managed along with any future resources.
 
 On the second and subsequent runs you use:
-
-``` bash
-make build
 ```
-
-If this is your first time using some of the apis you might needs to enable them:
-https://console.developers.google.com/apis/api/cloudresourcemanager.googleapis.com/overview?
+make build
+``` 
 
 
 
@@ -109,12 +96,6 @@ Check out these related projects.
 **Got a question?**
 
 File a GitHub [issue](https://github.com/JamesWoolfenden/terraform-gcp-statebucket/issues).
-
-
-
-## Terraform Module Development
-
-
 
 ## Slack Community
 
@@ -181,7 +162,7 @@ See [LICENSE](LICENSE) for full details.
 
 
 
-[logo]: docs/slalom-logo.png
+[logo]: https://github.com/JamesWoolfenden/build-harness/blob/master/docs/slalom-logo.png
 [website]: https://slalom.com
 [github]: https://github.com/jameswoolfenden
 [slack]: https://cpco.io/slack

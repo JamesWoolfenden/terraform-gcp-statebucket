@@ -17,6 +17,7 @@ tags:
 # Categories of this project
 categories:
   - terraform
+  - gcp
 
 # Logo for this project
 #logo: docs/slalom-logo.png
