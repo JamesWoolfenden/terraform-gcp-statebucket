@@ -65,7 +65,6 @@ usage: |-
   ```
 
 include:
-  - "docs/targets.md"
   - "docs/terraform.md"
   - "docs/usage.md"
 

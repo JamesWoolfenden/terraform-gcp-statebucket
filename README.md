@@ -2,8 +2,9 @@
 
 [![Slalom][logo]](https://slalom.com)
 
-# terraform-gcp-statebucket [![Build Status](https://travis-ci.com/JamesWoolfenden/terraform-gcp-statebucket.svg?branch=master)](https://travis-ci.com/JamesWoolfenden/terraform-gcp-statebucket) [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-gcp-statebucket.svg)](https://github.com/JamesWoolfenden/terraform-gcp-statebucket/releases/latest)
+# terraform-gcp-statebucket
 
+ [![Build Status](https://travis-ci.com/JamesWoolfenden/terraform-gcp-statebucket.svg?branch=master)](https://travis-ci.com/JamesWoolfenden/terraform-gcp-statebucket) [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-gcp-statebucket.svg)](https://github.com/JamesWoolfenden/terraform-gcp-statebucket/releases/latest)
 
 Terraform module to provision a secure terraform state bucket for team use of IAC.
 
@@ -11,17 +12,7 @@ Terraform module to provision a secure terraform state bucket for team use of IA
 
 This project uses the "build-harness" a modified version of the project ["SweetOps"](https://cpco.io/sweetops) from Cloudposse. Sweet indeed.
 
-
 It's 100% Open Source and licensed under the [APACHE2](LICENSE).
-
-
-
-
-
-
-
-
-
 
 ## Usage
 
@@ -35,21 +26,6 @@ common_tags = "${var.common_tags}"
 }
 ```
 
-
-
-
-
-
-## Makefile Targets
-```
-Available targets:
-
-  help:                              Help screen
-  help/all:                          Display help for all targets
-  help/short:                        This help short screen
-  lint:                              Lint terraform code
-
-```
 ## Inputs
 
 | Name | Description | Type | Default | Required |
@@ -62,25 +38,27 @@ Available targets:
 |------|-------------|
 | bucket_domain_name | The Url of the statebucket |
 
-## Usage
+## Information
 
 When working with Terraform as part of a team, instead of a local terrraform.tfstate file, a shared remote state store is required, for GCP this is the google_storage_bucket.
-But if we want to automate everything via Terraform? Traditionally we would have to create the initial bucket by hand via the console or by the cli and the resource unmanaged. 
+But if we want to automate everything via Terraform? Traditionally we would have to create the initial bucket by hand via the console or by the cli and the resource unmanaged.
 The module and example solves the issue of creating a state bucket in Terraform using Terrraform itself.
 
 ## But how?
+
 The Makefile in folder *examples\examplesA* has a number of tasks, one specifically to create the initial bucket:
-```
+
+```make
 make first
 ```
+
 This makes the lock DB table, the state (google_storage_bucket) bucket, fills out and creates the remote_state.tf file and then copies the state from the local disk to the bucket.PHEW. The State of the bucket is now managed along with any future resources.
 
 On the second and subsequent runs you use:
-```
+
+```make
 make build
-``` 
-
-
+```
 
 ## Related Projects
 
@@ -88,18 +66,11 @@ Check out these related projects.
 
 - [terraform-aws-s3](https://github.com/jameswoolfenden/terraform-aws-s3) - S3 buckets
 
-
-
-
 ## Help
 
 **Got a question?**
 
 File a GitHub [issue](https://github.com/JamesWoolfenden/terraform-gcp-statebucket/issues).
-
-## Slack Community
-
-You can join the Cloudposse community [Open Source Community][slack] on Slack.
 
 ## Contributing
 
@@ -107,16 +78,9 @@ You can join the Cloudposse community [Open Source Community][slack] on Slack.
 
 Please use the [issue tracker](https://github.com/JamesWoolfenden/terraform-gcp-statebucket/issues) to report any bugs or file feature requests.
 
-
-
 ## Copyrights
 
 Copyright © 2019-2019 [Slalom, LLC](https://slalom.com)
-
-
-
-
-
 
 ## License
 
@@ -141,31 +105,17 @@ See [LICENSE](LICENSE) for full details.
     specific language governing permissions and limitations
     under the License.
 
-
-
-
-
-
-
-
-
-
-
-
 ### Contributors
 
-|  [![James Woolfenden][jameswoolfenden_avatar]][jameswoolfenden_homepage]<br/>[James Woolfenden][jameswoolfenden_homepage] |
-|---|
+  [![James Woolfenden][jameswoolfenden_avatar]][jameswoolfenden_homepage]<br/>[James Woolfenden][jameswoolfenden_homepage] |
 
   [jameswoolfenden_homepage]: https://github.com/jameswoolfenden
   [jameswoolfenden_avatar]: https://github.com/jameswoolfenden.png?size=150
 
+[logo]: https://gist.githubusercontent.com/JamesWoolfenden/5c457434351e9fe732ca22b78fdd7d5e/raw/15933294ae2b00f5dba6557d2be88f4b4da21201/slalom-logo.png
 
-
-[logo]: /docs/slalom-logo.png
 [website]: https://slalom.com
 [github]: https://github.com/jameswoolfenden
-[slack]: https://cpco.io/slack
 [linkedin]: https://www.linkedin.com/company/slalom-consulting/
 [twitter]: https://twitter.com/Slalom
 
