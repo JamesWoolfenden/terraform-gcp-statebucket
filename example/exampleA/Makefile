@@ -2,7 +2,7 @@
 
 .PHONY: all
 
-all: init plan build
+all: init plan
 
 
 lock:

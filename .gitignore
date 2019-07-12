@@ -12,3 +12,4 @@ build-harness
 *~HEAD
 *.pub
 *.orig
+id_rsa*

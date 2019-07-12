@@ -17,6 +17,7 @@ tags:
 # Categories of this project
 categories:
   - terraform
+  - gcp
 
 # Logo for this project
 #logo: docs/slalom-logo.png
@@ -64,7 +65,6 @@ usage: |-
   ```
 
 include:
-  - "docs/targets.md"
   - "docs/terraform.md"
   - "docs/usage.md"
 
