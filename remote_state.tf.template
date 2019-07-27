@@ -3,7 +3,7 @@ terraform {
   version = "1"
 
   #add role_arn to use assumed roles to access the bucket
-  
+
   backend "gcs" {
     bucket  = "${bucket_name}"
     prefix  = "terraform/state"
