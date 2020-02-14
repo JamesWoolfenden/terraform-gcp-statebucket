@@ -1,7 +1,5 @@
 provider google {
-  project = "focused-elysium-224508"
-  region  = "europe-west1"
-  #version = "2.10"
+  version = "3.8.0"
 }
 
 provider "local" {
