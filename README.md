@@ -24,11 +24,26 @@ common_tags = var.common_tags
 ```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Providers
+
+| Name | Version |
+|------|---------|
+| google | n/a |
+| local | n/a |
+| template | n/a |
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|:----:|:-----:|:-----:|
-| common_tags | This is a map type for applying tags on resources | map | - | yes |
+|------|-------------|------|---------|:-----:|
+| common\_tags | This is a map type for applying tags on resources | `map` | n/a | yes |
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| bucket\_domain\_name | The Url of the statebucket |
+
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Outputs
