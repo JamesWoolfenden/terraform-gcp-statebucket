@@ -40,6 +40,7 @@ common_tags = var.common_tags
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:-----:|
 | common\_tags | This is a map type for applying tags on resources | `map` | n/a | yes |
+| kms\_key | Which key to encrypt with | `string` | `""` | no |
 
 ## Outputs
 
