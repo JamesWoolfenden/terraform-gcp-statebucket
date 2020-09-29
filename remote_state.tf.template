@@ -1,7 +1,4 @@
 terraform {
-  # fix the provider version
-  version = "1"
-
   #add role_arn to use assumed roles to access the bucket
 
   backend "gcs" {
