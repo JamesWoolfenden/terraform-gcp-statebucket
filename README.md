@@ -1,13 +1,9 @@
 # terraform-gcp-statebucket
 
-<<<<<<< HEAD
-[![Build Status](https://travis-ci.com/JamesWoolfenden/terraform-gcp-statebucket.svg?branch=master)](https://travis-ci.com/JamesWoolfenden/terraform-gcp-statebucket) [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-gcp-statebucket.svg)](https://github.com/JamesWoolfenden/terraform-gcp-statebucket/releases/latest)
-=======
 [![Build Status](https://github.com/JamesWoolfenden/terraform-gcp-statebucket//workflows/Verify%20and%20Bump/badge.svg?branch=master)](https://github.com/JamesWoolfenden/terraform-gcp-statebucket)
 [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-gcp-statebucket.svg)](https://github.com/JamesWoolfenden/terraform-gcp-statebucket/releases/latest)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 [![pre-commit](https://img.shields.io/badge/checkov-verified-brightgreen)](https://www.checkov.io/)
->>>>>>> 0a0555e4d2641d89f7c9008201449a73d5ca8f64
 
 Terraform module to provision a secure terraform state bucket for team use of IAC.
 
@@ -28,45 +24,33 @@ common_tags = var.common_tags
 ```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Requirements
+
+No requirements.
 
 ## Providers
 
-| Name     | Version |
-| -------- | ------- |
-| google   | n/a     |
-| local    | n/a     |
-| template | n/a     |
+| Name | Version |
+|------|---------|
+| google | n/a |
+| local | n/a |
+| template | n/a |
 
 ## Inputs
 
-<<<<<<< HEAD
-| Name        | Description                                       | Type  | Default | Required |
-| ----------- | ------------------------------------------------- | ----- | ------- | :------: |
-| common_tags | This is a map type for applying tags on resources | `map` | n/a     |   yes    |
-=======
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:-----:|
+|------|-------------|------|---------|:--------:|
 | common\_tags | This is a map type for applying tags on resources | `map` | n/a | yes |
 | kms\_key | Which key to encrypt with | `string` | `""` | no |
->>>>>>> 0a0555e4d2641d89f7c9008201449a73d5ca8f64
 
 ## Outputs
 
-| Name               | Description                |
-| ------------------ | -------------------------- |
-| bucket_domain_name | The Url of the statebucket |
+| Name | Description |
+|------|-------------|
+| bucket\_domain\_name | The Url of the statebucket |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
-<<<<<<< HEAD
-## Outputs
-
-| Name               | Description                |
-| ------------------ | -------------------------- |
-| bucket_domain_name | The Url of the statebucket |
-
-=======
->>>>>>> 0a0555e4d2641d89f7c9008201449a73d5ca8f64
 ## Information
 
 When working with Terraform as part of a team, instead of a local **terrraform.tfstate** file, a shared remote state store is required, for GCP this is the google_storage_bucket.
@@ -112,11 +96,7 @@ Please use the [issue tracker](https://github.com/JamesWoolfenden/terraform-gcp-
 
 ## Copyrights
 
-<<<<<<< HEAD
 Copyright © 2019-2019 James Woolfenden
-=======
-Copyright © 2019-2020 [Slalom, LLC](https://slalom.com)
->>>>>>> 0a0555e4d2641d89f7c9008201449a73d5ca8f64
 
 ## License
 
@@ -144,12 +124,6 @@ under the License.
 ### Contributors
 
 [![James Woolfenden][jameswoolfenden_avatar]][jameswoolfenden_homepage]<br/>[James Woolfenden][jameswoolfenden_homepage] |
-<<<<<<< HEAD
-=======
-
-[jameswoolfenden_homepage]: https://github.com/jameswoolfenden
-[jameswoolfenden_avatar]: https://github.com/jameswoolfenden.png?size=150
->>>>>>> 0a0555e4d2641d89f7c9008201449a73d5ca8f64
 
 [jameswoolfenden_homepage]: https://github.com/jameswoolfenden
 [jameswoolfenden_avatar]: https://github.com/jameswoolfenden.png?size=150

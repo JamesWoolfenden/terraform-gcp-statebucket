@@ -8,9 +8,10 @@ resource "google_storage_bucket" "statebucket" {
   encryption {
     default_kms_key_name = var.kms_key
   }
-  uniform_bucket_level_access {
-    bucket_policy_only = true
-  }
+
+
+  bucket_policy_only = true
+
 }
 
 
