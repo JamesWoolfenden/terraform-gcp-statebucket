@@ -10,7 +10,8 @@ resource "google_storage_bucket" "statebucket" {
   }
 
 
-  bucket_policy_only = true
+
+  uniform_bucket_level_access = true
 
 }
 

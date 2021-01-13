@@ -1,13 +1,10 @@
-provider google {
-  version = "3.10.0"
+provider "google" {
   project = var.project
   region  = var.region
 }
 
 provider "template" {
-  version = "2.1"
 }
 
 provider "local" {
-  version = "1.4"
 }

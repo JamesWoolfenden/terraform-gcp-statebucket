@@ -3,7 +3,7 @@
 [![Build Status](https://github.com/JamesWoolfenden/terraform-gcp-statebucket//workflows/Verify%20and%20Bump/badge.svg?branch=master)](https://github.com/JamesWoolfenden/terraform-gcp-statebucket)
 [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-gcp-statebucket.svg)](https://github.com/JamesWoolfenden/terraform-gcp-statebucket/releases/latest)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
-[![pre-commit](https://img.shields.io/badge/checkov-verified-brightgreen)](https://www.checkov.io/)
+[![checkov](https://img.shields.io/badge/checkov-verified-brightgreen)](https://www.checkov.io/)
 
 Terraform module to provision a secure terraform state bucket for team use of IAC.
 
@@ -40,7 +40,7 @@ No requirements.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| common\_tags | This is a map type for applying tags on resources | `map` | n/a | yes |
+| common\_tags | This is a map type for applying tags on resources | `map(any)` | n/a | yes |
 | kms\_key | Which key to encrypt with | `string` | `""` | no |
 
 ## Outputs
@@ -96,7 +96,7 @@ Please use the [issue tracker](https://github.com/JamesWoolfenden/terraform-gcp-
 
 ## Copyrights
 
-Copyright © 2019-2019 James Woolfenden
+Copyright © 2019-2021 James Woolfenden
 
 ## License
 
@@ -123,12 +123,10 @@ under the License.
 
 ### Contributors
 
-[![James Woolfenden][jameswoolfenden_avatar]][jameswoolfenden_homepage]<br/>[James Woolfenden][jameswoolfenden_homepage] |
+[![James Woolfenden][jameswoolfenden_avatar]][jameswoolfenden_homepage]<br/>[James Woolfenden][jameswoolfenden_homepage]
 
 [jameswoolfenden_homepage]: https://github.com/jameswoolfenden
 [jameswoolfenden_avatar]: https://github.com/jameswoolfenden.png?size=150
-[logo]: https://gist.githubusercontent.com/JamesWoolfenden/5c457434351e9fe732ca22b78fdd7d5e/raw/15933294ae2b00f5dba6557d2be88f4b4da21201/slalom-logo.png
-[website]: https://slalom.com
 [github]: https://github.com/jameswoolfenden
 [linkedin]: https://www.linkedin.com/in/jameswoolfenden/
 [twitter]: https://twitter.com/JimWoolfenden

@@ -30,3 +30,6 @@ first: terraform/init lock
 	@$(TERRAFORM) apply -target module.statebucket.google_storage_bucket.statebucket -auto-approve
 	@$(TERRAFORM) apply -target module.statebucket.local_file.remote_state -auto-approve
 	@$(TERRAFORM) init -force-copy
+valid:
+	terraform fmt
+	checkov -d . --external-checks-dir ../../checkov
