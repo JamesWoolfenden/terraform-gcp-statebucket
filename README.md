@@ -36,6 +36,20 @@ No requirements.
 | local | n/a |
 | template | n/a |
 
+## Modules
+
+No Modules.
+
+## Resources
+
+| Name |
+|------|
+| [google_project](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/project) |
+| [google_storage_bucket](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/storage_bucket) |
+| [google_storage_bucket_acl](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/storage_bucket_acl) |
+| [local_file](https://registry.terraform.io/providers/hashicorp/local/latest/docs/resources/file) |
+| [template_file](https://registry.terraform.io/providers/hashicorp/template/latest/docs/data-sources/file) |
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
@@ -48,7 +62,6 @@ No requirements.
 | Name | Description |
 |------|-------------|
 | bucket\_domain\_name | The Url of the statebucket |
-
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Information
