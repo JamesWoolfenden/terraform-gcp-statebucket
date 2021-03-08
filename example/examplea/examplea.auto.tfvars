@@ -1,6 +1,6 @@
 common_tags = {
-  maker = "James Woolfenden"
-}
+  createdby = "terraform"
+module = "terraform-gcp-statebucket" }
 
 project = "examplea"
 region  = "europe-west2"
