@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     google = {
-      version = "3.52.0"
+      version = "3.59.0"
       source  = "hashicorp/google"
     }
     template = {
@@ -13,5 +13,5 @@ terraform {
       version = "2.0.0"
     }
   }
-  required_version = ">= 0.14"
+  required_version = ">=0.14.8"
 }
