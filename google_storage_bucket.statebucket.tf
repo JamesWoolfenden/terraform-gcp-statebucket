@@ -1,6 +1,7 @@
 resource "google_storage_bucket" "statebucket" {
   #checkov:skip=CKV_GCP_62:
-  name = local.bucket_name
+  name     = local.bucket_name
+  location = var.location
 
   versioning {
     enabled = true
