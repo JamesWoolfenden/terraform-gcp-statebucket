@@ -22,9 +22,10 @@ Include this repository as a module in your existing terraform code:
 
 ```hcl
 module "statebucket" {
-source      = "JamesWoolfenden/statebucket/gcp"
-version     = "0.0.4"
-common_tags = var.common_tags
+  source      = "JamesWoolfenden/statebucket/gcp"
+  version     = "0.3.22"
+  common_tags = var.common_tags
+  kms_key     ="pike"
 }
 ```
 
@@ -37,9 +38,9 @@ No requirements.
 
 | Name | Version |
 |------|---------|
-| <a name="provider_google"></a> [google](#provider\_google) | n/a |
-| <a name="provider_local"></a> [local](#provider\_local) | n/a |
-| <a name="provider_template"></a> [template](#provider\_template) | n/a |
+| <a name="provider_google"></a> [google](#provider\_google) | 4.54.0 |
+| <a name="provider_local"></a> [local](#provider\_local) | 2.3.0 |
+| <a name="provider_template"></a> [template](#provider\_template) | 2.2.0 |
 
 ## Modules
 
@@ -60,7 +61,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_common_tags"></a> [common\_tags](#input\_common\_tags) | This is a map type for applying tags on resources | `map(any)` | n/a | yes |
-| <a name="input_kms_key"></a> [kms\_key](#input\_kms\_key) | Which key to encrypt with | `string` | `""` | no |
+| <a name="input_kms_key"></a> [kms\_key](#input\_kms\_key) | Which key to encrypt with | `string` | n/a | yes |
 | <a name="input_location"></a> [location](#input\_location) | n/a | `string` | n/a | yes |
 | <a name="input_project_id"></a> [project\_id](#input\_project\_id) | n/a | `string` | n/a | yes |
 
@@ -77,10 +78,11 @@ No modules.
 The Terraform resource required is:
 
 ```golang
-resource "google_project_iam_custom_role" "terraformXVlBzgba" {
-  project     = "examplea"
+
+resource "google_project_iam_custom_role" "terraform_pike" {
+  project     = "pike"
   role_id     = "terraform_pike"
-  title       = "terraformXVlBzgba"
+  title       = "terraform_pike"
   description = "A user with least privileges"
   permissions = [
     "resourcemanager.projects.get",
@@ -92,32 +94,33 @@ resource "google_project_iam_custom_role" "terraformXVlBzgba" {
   ]
 }
 
+
 ```
 <!-- END OF PRE-COMMIT-PIKE DOCS HOOK -->
 
 ## Information
 
 When working with Terraform as part of a team, instead of a local **terrraform.tfstate** file, a shared remote state store is required, for GCP this is the google_storage_bucket.
-But if we want to automate everything via Terraform? Traditionally we would have to create the initial bucket by hand via the console or by the cli and the resource unmanaged.
-The module and example solves the issue of creating a state bucket in Terraform using Terraform itself.
+But if we want to automate everything via Terraform? Traditionally we would have to create the initial bucket by hand via the console or by the CLI and the resource unmanaged.
+The module and example solve the issue of creating a state bucket in Terraform using Terraform itself.
 
 ## But how
 
-The Makefile in folder _examples\examplesA_ has a number of tasks, one specifically to create the initial bucket:
+The Makefile in folder _examples\examplesA_ has several tasks, one specifically to create the initial bucket:
 
 ```make
 make first
 ```
 
-This makes the lock DB table, the state (google_storage_bucket) bucket, fills out and creates the remote_state.tf file and then copies the state from the local disk to the bucket.PHEW. The State of the bucket is now managed along with any future resources.
+This makes the lock DB table, the state (google_storage_bucket) bucket, fills out and creates the **remote_state.tf** file and then copies the state from the local disk to the bucket.PHEW. The State of the bucket is now managed along with any future resources.
 
-On the second and subsequent runs you use:
+On the second and subsequent runs, you use:
 
 ```make
 make build
 ```
 
-If this is your first time using some of the apis you might needs to enable them:
+If this is your first time using the APIs you will need to enable them:
 <https://console.developers.google.com/apis/api/cloudresourcemanager.googleapis.com/overview?>
 
 ## Related Projects
@@ -140,7 +143,7 @@ Please use the [issue tracker](https://github.com/JamesWoolfenden/terraform-gcp-
 
 ## Copyrights
 
-Copyright © 2019-2022 James Woolfenden
+Copyright © 2019-2023 James Woolfenden
 
 ## License
 
