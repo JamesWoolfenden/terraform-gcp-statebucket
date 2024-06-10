@@ -13,3 +13,13 @@ resource "google_kms_crypto_key" "example-pike" {
     prevent_destroy = true
   }
 }
+
+resource "google_kms_crypto_key_iam_member" "storage" {
+  crypto_key_id = google_kms_crypto_key.example-pike.id
+  role          = "roles/cloudkms.cryptoKeyEncrypterDecrypter"
+  member        = "serviceAccount:service-${data.google_project.project.number}@gs-project-accounts.iam.gserviceaccount.com"
+}
+
+data "google_project" "project" {
+}
+
