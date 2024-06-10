@@ -4,7 +4,7 @@ variable "common_tags" {
 }
 
 locals {
-  bucket_name = "terraform-state-${data.google_project.project.number}"
+  bucket_name = "terraform-state-${var.project_id}"
 }
 
 variable "location" {

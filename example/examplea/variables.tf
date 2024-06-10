@@ -6,3 +6,8 @@ variable "common_tags" {
 variable "region" {
   type = string
 }
+
+variable "project" {
+  type        = string
+  description = "(optional) describe your variable"
+}
