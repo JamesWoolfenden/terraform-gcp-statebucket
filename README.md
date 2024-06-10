@@ -1,6 +1,6 @@
 # terraform-gcp-statebucket
 
-[![Build Status](https://github.com/JamesWoolfenden/terraform-gcp-statebucket//workflows/Verify%20and%20Bump/badge.svg?branch=master)](https://github.com/JamesWoolfenden/terraform-gcp-statebucket)
+[![Build Status](https://github.com/JamesWoolfenden/terraform-gcp-statebucket//workflows/Verify/badge.svg?branch=master)](https://github.com/JamesWoolfenden/terraform-gcp-statebucket)
 [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-gcp-statebucket.svg)](https://github.com/JamesWoolfenden/terraform-gcp-statebucket/releases/latest)
 [![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/JamesWoolfenden/terraform-gcp-statebucket.svg?label=latest)](https://github.com/JamesWoolfenden/terraform-gcp-statebucket/releases/latest)
 ![Terraform Version](https://img.shields.io/badge/tf-%3E%3D0.14.0-blue.svg)
