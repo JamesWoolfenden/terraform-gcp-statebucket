@@ -40,7 +40,6 @@ No requirements.
 |------|---------|
 | <a name="provider_google"></a> [google](#provider\_google) | n/a |
 | <a name="provider_local"></a> [local](#provider\_local) | n/a |
-| <a name="provider_template"></a> [template](#provider\_template) | n/a |
 
 ## Modules
 
@@ -53,8 +52,6 @@ No modules.
 | [google_storage_bucket.statebucket](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/storage_bucket) | resource |
 | [google_storage_bucket_acl.statebucket_acl](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/storage_bucket_acl) | resource |
 | [local_file.remote_state](https://registry.terraform.io/providers/hashicorp/local/latest/docs/resources/file) | resource |
-| [google_project.project](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/project) | data source |
-| [template_file.remote_state](https://registry.terraform.io/providers/hashicorp/template/latest/docs/data-sources/file) | data source |
 
 ## Inputs
 
@@ -85,7 +82,6 @@ resource "google_project_iam_custom_role" "terraform_pike" {
   title       = "terraform_pike"
   description = "A user with least privileges"
   permissions = [
-    "resourcemanager.projects.get",
     "storage.buckets.create",
     "storage.buckets.delete",
     "storage.buckets.get",
