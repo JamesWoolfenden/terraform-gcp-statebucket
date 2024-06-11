@@ -50,7 +50,6 @@ No modules.
 | Name | Type |
 |------|------|
 | [google_storage_bucket.statebucket](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/storage_bucket) | resource |
-| [google_storage_bucket_acl.statebucket_acl](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/storage_bucket_acl) | resource |
 | [local_file.remote_state](https://registry.terraform.io/providers/hashicorp/local/latest/docs/resources/file) | resource |
 
 ## Inputs
@@ -85,7 +84,6 @@ resource "google_project_iam_custom_role" "terraform_pike" {
     "storage.buckets.create",
     "storage.buckets.delete",
     "storage.buckets.get",
-    "storage.buckets.setIamPolicy",
     "storage.buckets.update"
   ]
 }
