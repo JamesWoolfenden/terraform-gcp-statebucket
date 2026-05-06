@@ -1,4 +1,4 @@
-data "google_kms_key_ring" "keyring" {
+resource "google_kms_key_ring" "keyring" {
   name     = "keyring-example"
   location = "global"
   project  = "pike-477416"
@@ -6,7 +6,7 @@ data "google_kms_key_ring" "keyring" {
 
 resource "google_kms_crypto_key" "example-pike" {
   name            = "pike"
-  key_ring        = data.google_kms_key_ring.keyring.id
+  key_ring        = google_kms_key_ring.keyring.id
   rotation_period = "100000s"
 
   lifecycle {
