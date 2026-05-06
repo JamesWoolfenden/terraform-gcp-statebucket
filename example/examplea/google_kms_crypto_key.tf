@@ -1,7 +1,7 @@
 data "google_kms_key_ring" "keyring" {
   name     = "keyring-example"
   location = "global"
-  project  = "pike-gcp"
+  project  = "pike-477416"
 }
 
 resource "google_kms_crypto_key" "example-pike" {
