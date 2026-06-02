@@ -48,7 +48,7 @@ No modules.
 | ---- | ---- |
 | [google_storage_bucket.statebucket](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/storage_bucket) | resource |
 | [local_file.remote_state](https://registry.terraform.io/providers/hashicorp/local/latest/docs/resources/file) | resource |
-| [google_project.project](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/project) | data source |
+| [google_project.this](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/project) | data source |
 
 ## Inputs
 

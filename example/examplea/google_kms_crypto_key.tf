@@ -4,7 +4,7 @@ resource "google_kms_key_ring" "keyring" {
   project  = "pike-477416"
 }
 
-resource "google_kms_crypto_key" "example-pike" {
+resource "google_kms_crypto_key" "example_pike" {
   name            = "pike"
   key_ring        = google_kms_key_ring.keyring.id
   rotation_period = "7776000s"
