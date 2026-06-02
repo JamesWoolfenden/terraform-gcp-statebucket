@@ -1,0 +1,24 @@
+id: HLD_PROPOSED_002
+name: GCS buckets must enable lifecycle prevent_destroy
+principle: backup-and-recovery
+severity: HIGH
+rationale: |
+  A GCS bucket deleted by terraform destroy cannot be recovered if versioning
+  and Object Versioning data are lost with it. Buckets used for Terraform state,
+  data lakes, or audit logs are especially critical — accidental deletion
+  destroys all objects permanently. Setting lifecycle.prevent_destroy = true
+  guards against both human error and rogue automation.
+remediation: |
+  Add a lifecycle block to every google_storage_bucket resource:
+
+    resource "google_storage_bucket" "example" {
+      name = "my-bucket"
+      # ...
+      lifecycle {
+        prevent_destroy = true
+      }
+    }
+resources:
+  google_storage_bucket:
+    path: lifecycle.prevent_destroy
+    equals: true
