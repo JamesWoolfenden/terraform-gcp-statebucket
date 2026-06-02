@@ -2,6 +2,7 @@ resource "google_storage_bucket" "statebucket" {
   #checkov:skip=CKV_GCP_62:
   name     = local.bucket_name
   location = var.location
+  labels   = var.labels
 
   versioning {
     enabled = true
@@ -13,10 +14,4 @@ resource "google_storage_bucket" "statebucket" {
 
   uniform_bucket_level_access = true
   public_access_prevention    = "enforced"
-}
-
-
-variable "kms_key" {
-  description = "Which key to encrypt with"
-  type        = string
 }

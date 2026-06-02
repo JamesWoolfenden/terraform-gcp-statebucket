@@ -7,7 +7,7 @@ resource "google_kms_key_ring" "keyring" {
 resource "google_kms_crypto_key" "example-pike" {
   name            = "pike"
   key_ring        = google_kms_key_ring.keyring.id
-  rotation_period = "100000s"
+  rotation_period = "7776000s"
 
   lifecycle {
     prevent_destroy = true
