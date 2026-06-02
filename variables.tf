@@ -1,5 +1,5 @@
 locals {
-  bucket_name = "terraform-state-${data.google_project.project.number}"
+  bucket_name = "terraform-state-${data.google_project.this.number}"
 }
 
 variable "location" {
@@ -24,6 +24,16 @@ variable "labels" {
   description = "Labels to apply to all resources created by this module."
   type        = map(string)
   default     = {}
+  validation {
+    condition     = alltrue([for k in keys(var.labels) : can(regex("^[a-z0-9_-]+$", k))])
+    error_message = "All label keys must match the regex ^[a-z0-9_-]+$."
+  }
+}
+
+variable "log_bucket" {
+  description = "Name of the GCS bucket to receive access logs for the state bucket. Strongly recommended for state buckets — omitting leaves access logging disabled."
+  type        = string
+  default     = null
 }
 
 variable "kms_key" {

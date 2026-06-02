@@ -1,5 +1,4 @@
 resource "google_storage_bucket" "statebucket" {
-  #checkov:skip=CKV_GCP_62:
   name     = local.bucket_name
   location = var.location
   labels   = var.labels
@@ -10,6 +9,14 @@ resource "google_storage_bucket" "statebucket" {
 
   encryption {
     default_kms_key_name = var.kms_key
+  }
+
+  dynamic "logging" {
+    for_each = var.log_bucket != null ? [1] : []
+    content {
+      log_bucket        = var.log_bucket
+      log_object_prefix = "state-access/"
+    }
   }
 
   uniform_bucket_level_access = true

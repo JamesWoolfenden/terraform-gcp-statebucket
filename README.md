@@ -57,6 +57,7 @@ No modules.
 | <a name="input_kms_key"></a> [kms\_key](#input\_kms\_key) | Full resource ID of the Cloud KMS key to use for bucket encryption (projects/PROJECT/locations/LOCATION/keyRings/RING/cryptoKeys/KEY). | `string` | n/a | yes |
 | <a name="input_labels"></a> [labels](#input\_labels) | Labels to apply to all resources created by this module. | `map(string)` | `{}` | no |
 | <a name="input_location"></a> [location](#input\_location) | GCP location for the state bucket (e.g. US, EU, us-central1). | `string` | n/a | yes |
+| <a name="input_log_bucket"></a> [log\_bucket](#input\_log\_bucket) | Name of the GCS bucket to receive access logs for the state bucket. Strongly recommended for state buckets â€” omitting leaves access logging disabled. | `string` | `null` | no |
 | <a name="input_project_id"></a> [project\_id](#input\_project\_id) | GCP project ID that owns the state bucket. | `string` | n/a | yes |
 
 ## Outputs
