@@ -22,6 +22,19 @@ resource "google_storage_bucket" "statebucket" {
   uniform_bucket_level_access = true
   public_access_prevention    = "enforced"
 
+  soft_delete_policy {
+    retention_duration_seconds = 604800
+  }
+
+  lifecycle_rule {
+    action {
+      type = "Delete"
+    }
+    condition {
+      age = 90
+    }
+  }
+
   lifecycle {
     prevent_destroy = true
   }

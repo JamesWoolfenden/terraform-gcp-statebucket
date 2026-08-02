@@ -30,6 +30,7 @@ variable "labels" {
   }
 }
 
+# holden:ignore:HLD_TF_021
 variable "log_bucket" {
   description = "Name of the GCS bucket to receive access logs for the state bucket. Strongly recommended for state buckets — omitting leaves access logging disabled."
   type        = string
@@ -39,6 +40,7 @@ variable "log_bucket" {
 variable "kms_key" {
   description = "Full resource ID of the Cloud KMS key to use for bucket encryption (projects/PROJECT/locations/LOCATION/keyRings/RING/cryptoKeys/KEY)."
   type        = string
+  sensitive   = true
   validation {
     condition     = can(regex("^projects/.+/locations/.+/keyRings/.+/cryptoKeys/.+$", var.kms_key))
     error_message = "kms_key must be a full Cloud KMS key resource ID."

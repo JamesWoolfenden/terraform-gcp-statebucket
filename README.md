@@ -19,10 +19,11 @@ Include this repository as a module in your existing terraform code:
 
 ```hcl
 module "statebucket" {
-  source      = "JamesWoolfenden/statebucket/gcp"
-  version     = "0.3.22"
-  common_tags = var.common_tags
-  kms_key     ="pike"
+  source     = "JamesWoolfenden/statebucket/gcp"
+  version    = "0.3.22"
+  location   = "europe-west2"
+  project_id = "my-project"
+  kms_key    = "projects/my-project/locations/europe-west2/keyRings/my-ring/cryptoKeys/my-key"
 }
 ```
 
@@ -57,7 +58,7 @@ No modules.
 | <a name="input_kms_key"></a> [kms\_key](#input\_kms\_key) | Full resource ID of the Cloud KMS key to use for bucket encryption (projects/PROJECT/locations/LOCATION/keyRings/RING/cryptoKeys/KEY). | `string` | n/a | yes |
 | <a name="input_labels"></a> [labels](#input\_labels) | Labels to apply to all resources created by this module. | `map(string)` | `{}` | no |
 | <a name="input_location"></a> [location](#input\_location) | GCP location for the state bucket (e.g. US, EU, us-central1). | `string` | n/a | yes |
-| <a name="input_log_bucket"></a> [log\_bucket](#input\_log\_bucket) | Name of the GCS bucket to receive access logs for the state bucket. Strongly recommended for state buckets â€” omitting leaves access logging disabled. | `string` | `null` | no |
+| <a name="input_log_bucket"></a> [log\_bucket](#input\_log\_bucket) | Name of the GCS bucket to receive access logs for the state bucket. Strongly recommended for state buckets — omitting leaves access logging disabled. | `string` | `null` | no |
 | <a name="input_project_id"></a> [project\_id](#input\_project\_id) | GCP project ID that owns the state bucket. | `string` | n/a | yes |
 
 ## Outputs
@@ -73,7 +74,7 @@ No modules.
 The Terraform resource required is:
 
 ```golang
-
+# apply role
 resource "google_project_iam_custom_role" "terraform_pike" {
   project     = "pike-477416"
   role_id     = "terraform_pike"
@@ -85,6 +86,19 @@ resource "google_project_iam_custom_role" "terraform_pike" {
     "storage.buckets.delete",
     "storage.buckets.get",
     "storage.buckets.update"
+  ]
+}
+
+# plan role
+resource "google_project_iam_custom_role" "terraform_pike_plan" {
+  project     = "pike-477416"
+  role_id     = "terraform_pike_plan"
+  title       = "terraform_pike_plan"
+  description = "A user with least privileges"
+  permissions = [
+    "resourcemanager.organizations.get",
+    "resourcemanager.projects.get",
+    "storage.buckets.get"
   ]
 }
 
