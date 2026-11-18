@@ -16,5 +16,3 @@ jobs:
   # holden:ignore:HLD_CI_017: accepted risk, org-controlled repo (JamesWoolfenden/.github)
   pr:
     uses: JamesWoolfenden/.github/.github/workflows/terraform-pr-gcp.yml@main
-    with:
-      service_account: terraform-gcp-statebucket@pike-477416.iam.gserviceaccount.com
